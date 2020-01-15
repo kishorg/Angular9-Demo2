@@ -1,0 +1,21 @@
+<div>
+    <h3>Post to Typicode API</h3>
+
+    <form [formGroup]="frm" (ngSubmit)="submit()">
+        <label for="">Enter Title</label>
+        <input type="text" name="title" formControlName="title"/>
+        <span [hidden]="frm.controls['title'].valid">**</span>
+        <br>
+        <label for="">Enter Body</label>
+        <input type="text" name="body" formControlName="body"/>
+        <span [hidden]="frm.controls['body'].valid">**</span>        
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Post Status: {{msg}}</h2>
+    <p>
+        {{data | json}}
+    </p>
+
+</div>

@@ -1,0 +1,9 @@
+<p>data-binding works!</p>
+<h3>{{title}}</h3>
+<br>
+  User Name: {{userName}}
+<br>
+Type to change the title:
+<input type="text" [(ngModel)]= "title">
+<br>
+<button (click) = btnClick() [disabled] = flag >Click to change Title</button>

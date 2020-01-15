@@ -1,0 +1,26 @@
+<p>structural-directive-demo works!</p>
+<br>
+<div style="background-color:lightcyan">
+    Select Country:
+    <select (change)="countryChange($event)">
+        <option *ngFor="let item of countries" value="{{item.code}}" >{{item.name}}</option>
+    </select>
+
+    <br>
+    <hr>
+    <br>
+    <div [ngSwitch]="country" [ngClass]="{'in':country == 'in','ch':country == 'ch','us':country == 'us'}">
+        <div *ngSwitchCase="'in'">India</div>
+        <div *ngSwitchCase="'ch'">China</div>
+        <div *ngSwitchCase="'us'">USA</div>
+        <div *ngSwitchCase="'uk'">UK</div>
+        <div *ngSwitchDefault>Default</div>
+    </div>
+    <br>
+    <hr>
+    Country List without USA:
+    <br>
+    <div *ngFor="let c of countries">
+        <div *ngIf = "c !== 'USA'">{{c}}</div>
+    </div>
+</div>
